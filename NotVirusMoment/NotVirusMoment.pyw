@@ -28,7 +28,12 @@ if e.hour >= 8 and e.hour <= 14 or BYPASS == TRUE:
             #These Are Exit Codes
             if Out == 2:
                 #Incorrect Password -> Power Down
-                os.system('cmd')
+
+                #Make Sure Windows Is Alive Enough To Turn Off The Computer
+                os.system('explorer.exe "C:\\Windows\\explorer.exe"')
+                
+                #Death
+                os.system('cmd /c shutdown /s /t 0')
                 exit()
 
         #Tell Computer That We Have Custom Exit Codes
